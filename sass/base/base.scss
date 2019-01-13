@@ -1,0 +1,141 @@
+//MAIN
+@import "../main";
+
+
+
+*{
+  border: 0;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	background: #CCC;
+	color: #FFF;
+  @include fonts($fontFamily, $fontSize, $fontWeight);
+	position: relative;
+}
+
+
+
+/* TYPOGRAPHY ================================== */
+h1, h2{
+	line-height: 1;
+	text-transform: capitalize;
+}
+
+h1{
+  color: $colorWhite;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h2{
+	font-size: 17px;
+}
+
+strong, em{
+	color: #666666;
+}
+
+p{
+	color: $colorWhite;
+  font-size: .8em;
+}
+
+
+
+/* BASE STRUCTURE =============================== */
+.container{
+  background: $colorWhite;
+  @extend %center-element;
+  padding-bottom: 170px;
+  position: relative;
+  width: 1000px;
+}
+
+
+
+/* HEADER ================================== */
+header{
+  height: 350px;
+  margin-bottom: 40px;
+  padding: 20px 9%;
+	@extend %full-width;
+
+/*SEARCH FIELD*/
+form{
+  display: flex;
+  flex-direction: column;
+  @extend %center-element;
+  margin-top: 80px;
+  width: 500px;
+
+  label{
+    @extend %background-colorCharcoal;
+    @extend %inline-block;
+    font-size: .9em;
+    padding: 5px;
+    width: 57%;
+  }
+
+  div{
+    @include formDiv();
+
+    #searchInput{
+      flex: 1;
+      padding: 2% 3%;
+
+      &[placeholder]{
+        opacity: .4;
+      }
+    }
+
+    button{
+      @extend %cursor-pointer;
+      background: transparent;
+    }
+  }
+
+  p{
+    @include formPara($colorRed);
+  }
+}
+
+
+
+section{
+  @extend %background-colorWhite;
+  padding: 0 10%;
+  margin-bottom: 4%;
+
+  article{
+    margin-bottom: 20px;
+    margin-right: 3%;
+    @extend %inline-block;
+    width: 30%;
+
+    img{
+      margin-bottom: 0;
+      width: 100%;
+    }
+
+    p{
+      background: $colorCharcoal;
+      padding: 6% 5%;
+      -webkit-margin-before: -.4em;
+
+      span{
+        font-size: 1.1em;
+        font-weight: bold;
+        margin-bottom: 5%;
+        color: $colorGold;
+      }
+    }
+  }
+}
